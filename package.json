@@ -8,7 +8,9 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish"
+    "release": "turbo run build --filter=docs^... && changeset publish",
+    "storybook": "turbo run dev --filter @composer-kit/storybook",
+    "run:docs": "turbo run dev --filter @composer-kit/docs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
@@ -16,5 +18,5 @@
     "turbo": "^2.3.3"
   },
   "packageManager": "pnpm@8.15.6",
-  "name": "design-system"
+  "name": "composer-kit"
 }
