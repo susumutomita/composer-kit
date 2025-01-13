@@ -4,7 +4,6 @@ export default {
   content: [
     "./stories/**/*.{ts,tsx}",
     "./.storybook/*.{ts,js,jsx,tsx}",
-    "/Users/ankit/Desktop/celo/celo-composer/packages/composer-kit/**/*.{ts,tsx, jsx}",
     "../../packages/composer-kit/**/*.{html,js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
