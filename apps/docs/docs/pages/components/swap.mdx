@@ -11,14 +11,14 @@ import { swapableTokens } from "../../../utils/constants";
 
 ## Usage
 
-This is a Swap component.
+The `Swap` component allows users to exchange tokens seamlessly.
 
 :::code-group
 
 <div data-title="Preview">
   <div className="flex items-center justify-center">
     <Swap>
-      <SwapHeader lable="Swap" />
+      <SwapHeader label="Swap" />
       <SwapToken label="Sell" swapableTokens={swapableTokens} type="from" />
       <SwapToggle />
       <SwapToken label="Buy" swapableTokens={swapableTokens} type="to" />
@@ -28,7 +28,7 @@ This is a Swap component.
 </div>
 
 ```tsx [app.tsx]
-import { Wallet, Connect, Avatar, Name } from "@composer-kit/ui/wallet";
+import { Swap, SwapToggle, SwapToken, SwapHeader, SwapButton } from "@composer-kit/ui/swap";
 
 export default function App() {
   const swapableTokens = [
@@ -50,7 +50,7 @@ export default function App() {
 
   return (
     <Swap>
-      <SwapHeader lable="Swap" />
+      <SwapHeader label="Swap" />
       <SwapToken label="Sell" swapableTokens={swapableTokens} type="from" />
       <SwapToggle />
       <SwapToken label="Buy" swapableTokens={swapableTokens} type="to" />
@@ -58,6 +58,6 @@ export default function App() {
     </Swap>
   );
 }
-```
 
 :::
+```

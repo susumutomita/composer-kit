@@ -1,0 +1,13 @@
+# ComposerKitProvider
+
+## Usage
+
+The `ComposerKitProvider` component is essential for integrating ComposerKit components into your app. Wrap your application with this provider to ensure proper functionality.
+
+```tsx
+import { ComposerKitProvider } from "@composer-kit/ui/core";
+
+export default function Providers({ children }: { children: React.ReactNode }) {
+  return <ComposerKitProvider>{children}</ComposerKitProvider>;
+}
+```

@@ -19,7 +19,11 @@ type Story = StoryObj<typeof Identity>;
 export const Primary: Story = {
   render: () => {
     return (
-      <Identity address="0x" className="flex gap-2 items-center" token="cUSD">
+      <Identity
+        address="0xE1061b397cC3C381E95a411967e3F053A7c50E70"
+        className="flex gap-2 items-center"
+        token="cUSD"
+      >
         <Avatar />
         <div className="flex flex-col">
           <Name />
