@@ -1,0 +1,63 @@
+import {
+  Swap,
+  SwapToggle,
+  SwapToken,
+  SwapHeader,
+  SwapButton,
+} from "@composer-kit/ui/swap";
+import { swapableTokens } from "../../../utils/constants";
+
+# Swap
+
+## Usage
+
+This is a Swap component.
+
+:::code-group
+
+<div data-title="Preview">
+  <div className="flex items-center justify-center">
+    <Swap>
+      <SwapHeader lable="Swap" />
+      <SwapToken label="Sell" swapableTokens={swapableTokens} type="from" />
+      <SwapToggle />
+      <SwapToken label="Buy" swapableTokens={swapableTokens} type="to" />
+      <SwapButton />
+    </Swap>
+  </div>
+</div>
+
+```tsx [app.tsx]
+import { Wallet, Connect, Avatar, Name } from "@composer-kit/ui/wallet";
+
+export default function App() {
+  const swapableTokens = [
+    {
+      address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      chainId: 8453,
+      decimals: 6,
+      name: "USDC",
+      symbol: "USDC",
+    },
+    {
+      address: "0x7d4b8Cce0591C9044a22ee543533b72E976E36C3",
+      chainId: 8453,
+      decimals: 6,
+      name: "USDT",
+      symbol: "USDT",
+    },
+  ];
+
+  return (
+    <Swap>
+      <SwapHeader lable="Swap" />
+      <SwapToken label="Sell" swapableTokens={swapableTokens} type="from" />
+      <SwapToggle />
+      <SwapToken label="Buy" swapableTokens={swapableTokens} type="to" />
+      <SwapButton />
+    </Swap>
+  );
+}
+```
+
+:::
