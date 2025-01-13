@@ -1,0 +1,47 @@
+import { Wallet, Connect, Avatar, Name } from "@composer-kit/ui/wallet";
+import { ComposerKitProvider } from "@composer-kit/ui/core";
+
+# Wallet
+
+## Usage
+
+This is a Wallet component.
+
+:::code-group
+
+<div data-title="Preview">
+  <div className="flex items-center justify-center">
+    <Wallet>
+      <Connect
+        label="Connect Now"
+        onConnect={() => {
+          console.log("Connected");
+        }}
+      >
+        <Avatar />
+        <Name />
+      </Connect>
+    </Wallet>
+  </div>
+</div>
+
+```tsx [app.tsx]
+import { Wallet, Connect, Avatar, Name } from "@composer-kit/ui/wallet";
+
+export default function App() {
+  return (
+    <Wallet>
+      <Connect
+        onConnect={() => {
+          console.log("Connected");
+        }}
+      >
+        <Avatar />
+        <Name />
+      </Connect>
+    </Wallet>
+  );
+}
+```
+
+:::
