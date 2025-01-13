@@ -1,0 +1,68 @@
+import {
+  Avatar,
+  Balance,
+  Identity,
+  Name,
+  Social,
+} from "@composer-kit/ui/identity";
+import { ComposerKitProvider } from "@composer-kit/ui/core";
+
+# Identity
+
+## Usage
+
+The `Identity` component displays user information such as address, name, balance, and social links in a visually appealing way.
+
+:::code-group
+
+<div data-title="Preview">
+  <div className="flex items-center justify-center">
+    <div className="w-auto p-6 bg-white dark:bg-black rounded-lg shadow-lg min-w-[200px]">
+      <Identity
+        address="0xE1061b397cC3C381E95a411967e3F053A7c50E70"
+        className="flex gap-4 items-center"
+        token="cUSD"
+      >
+        <Avatar />
+        <div className="flex flex-col">
+          <Name />
+          <Balance />
+        </div>
+        <Social tag="twitter" />
+      </Identity>
+    </div>
+  </div>
+</div>
+
+```tsx [app.tsx]
+import {
+  Avatar,
+  Balance,
+  Identity,
+  Name,
+  Social,
+} from "@composer-kit/ui/identity";
+
+export default function App() {
+  return (
+    <div className="flex items-center justify-center h-screen">
+      <div className="w-auto p-6 bg-white dark:bg-black rounded-lg shadow-lg">
+        <Identity
+          address="0xE1061b397cC3C381E95a411967e3F053A7c50E70"
+          className="flex gap-4 items-center"
+          token="cUSD"
+        >
+          <Avatar />
+          <div className="flex flex-col">
+            <Name />
+            <Balance />
+          </div>
+          <Social tag="twitter" />
+        </Identity>
+      </div>
+    </div>
+  );
+}
+```
+
+:::

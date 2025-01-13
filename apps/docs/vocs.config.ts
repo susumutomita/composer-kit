@@ -1,11 +1,21 @@
 import { defineConfig } from "vocs";
 
 export default defineConfig({
-  title: "Docs",
+  title: "Composer Kit",
   sidebar: [
     {
-      text: "Installation",
-      link: "/installation",
+      text: "Guide",
+      collapsed: false,
+      items: [
+        {
+          text: "Installation",
+          link: "/installation",
+        },
+        {
+          text: "ComposerKitProvider",
+          link: "/composer-kit-provider",
+        },
+      ],
     },
     {
       text: "Components",
@@ -18,6 +28,14 @@ export default defineConfig({
         {
           text: "Swap",
           link: "/components/swap",
+        },
+        {
+          text: "Balance",
+          link: "/components/balance",
+        },
+        {
+          text: "Identity",
+          link: "/components/identity",
         },
       ],
     },
