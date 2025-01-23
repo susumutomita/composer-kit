@@ -33,6 +33,16 @@
       "types": "./dist/swap/index.d.ts",
       "import": "./dist/swap/index.mjs",
       "require": "./dist/swap/index.js"
+    },
+    "./token-select": {
+      "types": "./dist/token-select/index.d.ts",
+      "import": "./dist/token-select/index.mjs",
+      "require": "./dist/token-select/index.js"
+    },
+    "./payment": {
+      "types": "./dist/payment/index.d.ts",
+      "import": "./dist/payment/index.mjs",
+      "require": "./dist/payment/index.js"
     }
   },
   "scripts": {
@@ -62,12 +72,15 @@
     "access": "public"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.5",
+    "@radix-ui/react-popover": "^1.1.5",
     "@radix-ui/react-select": "^2.1.4",
     "@uniswap/sdk-core": "^6.1.1",
     "@uniswap/v3-sdk": "^3.19.0",
     "@wagmi/core": "^2.16.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.0.4",
     "lucide-react": "^0.469.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss": "^3.4.17"

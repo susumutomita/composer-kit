@@ -12,6 +12,7 @@
     "@types/react": "latest",
     "react": "^18.2.0",
     "react-dom": "18",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "latest",
     "viem": "^2.21.55",
     "vocs": "latest",

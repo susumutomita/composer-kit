@@ -1,0 +1,83 @@
+import {
+  TokenSelect,
+  TokenSelectGroup,
+  TokenSelectInput,
+  TokenSelectOption,
+  TokenSelectDropdown,
+} from "@composer-kit/ui/token-select";
+import { ComposerKitProvider } from "@composer-kit/ui/core";
+import { swapableTokens } from "../../../utils/constants";
+
+# Token Select
+
+## Usage
+
+The `TokenSelect` component is designed to search in list of tokens and select token.
+
+:::code-group
+
+<div data-title="Preview">
+  <div className="flex items-center justify-center">
+    <TokenSelect delayMs={300}>
+      <TokenSelectDropdown placeholder="Search tokens...">
+        <TokenSelectInput placeholder="Search Token" />
+        <TokenSelectGroup heading="Available tokens">
+          {swapableTokens.map((token) => (
+            <TokenSelectOption key={token.address} token={token} />
+          ))}
+        </TokenSelectGroup>
+      </TokenSelectDropdown>
+    </TokenSelect>
+  </div>
+</div>
+
+```tsx [app.tsx]
+import {
+  Balance,
+  BalanceInput,
+  BalanceOptions,
+  BalanceText,
+} from "@composer-kit/ui/balance";
+
+const tokens = [
+  {
+    address: "0x765de816845861e75a25fca122bb6898b8b1282a",
+    chainId: 42220,
+    decimals: 18,
+    name: "cUSD",
+    symbol: "cUSD",
+  },
+  {
+    address: "0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e",
+    chainId: 42220,
+    decimals: 6,
+    name: "USDT",
+    symbol: "USDT",
+  },
+  {
+    chainId: 42220,
+    symbol: "CELO",
+    name: "Celo",
+    address: "0x471ece3750da237f93b8e339c536989b8978a438",
+    decimals: 18,
+  },
+];
+
+export default function App() {
+  return (
+    <div className="w-96 p-4 bg-white dark:bg-black rounded-lg shadow-lg">
+      <Balance>
+        <div className="flex flex-col gap-4">
+          <BalanceOptions tokens={swapableTokens} />
+          <BalanceInput />
+        </div>
+        <div className="mt-4">
+          <BalanceText />
+        </div>
+      </Balance>
+    </div>
+  );
+}
+```
+
+:::
