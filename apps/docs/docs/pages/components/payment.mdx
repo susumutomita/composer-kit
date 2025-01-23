@@ -1,0 +1,69 @@
+import {
+  Payment,
+  PaymentButton,
+  PaymentError,
+  PaymentDialog,
+} from "@composer-kit/ui/payment";
+import { ComposerKitProvider } from "@composer-kit/ui/core";
+import { swapableTokens } from "../../../utils/constants";
+import { celo, celoAlfajores } from "viem/chains";
+import { PaymentBasic } from "../../../examples/payment/basic";
+
+# Payment
+
+## Usage
+
+The `Payment` component is designed to send payment to the recipient address.
+
+:::code-group
+
+<div data-title="Preview">
+  <div className="flex items-center justify-center">
+    <PaymentBasic />
+  </div>
+</div>
+
+```tsx [app.tsx]
+import {
+  Payment,
+  PaymentButton,
+  PaymentError,
+  PaymentDialog,
+} from "@composer-kit/ui/payment";
+
+export default function App() {
+  return (
+    <div className="w-96 p-4 bg-white dark:bg-black rounded-lg shadow-lg">
+      <Payment
+        amount="0.001"
+        chain={celo}
+        onSuccess={(hash) => {
+          console.log("Payment successful", hash);
+        }}
+        onError={(error) => {
+          console.error("Payment error", error);
+        }}
+        recipientAddress="0x717F8A0b80CbEDe59EcA195F1E3D8E142C84d4d6"
+        tokenAddress="0x765de816845861e75a25fca122bb6898b8b1282a"
+      >
+        <button
+          onClick={() => {
+            setIsOpen(!isOpen);
+          }}
+        >
+          Paynow
+        </button>
+        <PaymentDialog
+          onOpenChange={() => {
+            setIsOpen(!isOpen);
+          }}
+          open={isOpen}
+        />
+        <PaymentError />
+      </Payment>
+    </div>
+  );
+}
+```
+
+:::

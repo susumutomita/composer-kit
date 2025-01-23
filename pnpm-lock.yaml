@@ -159,7 +159,7 @@ importers:
         version: 3.19.0(hardhat@2.22.17(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10))
       '@wagmi/core':
         specifier: ^2.16.3
-        version: 2.16.3(@tanstack/query-core@5.62.8)(@types/react@18.3.2)(react@18.3.1)(typescript@5.5.4)(use-sync-external-store@1.2.0(react@18.3.1))(viem@2.21.55(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10))
+        version: 2.16.3(@tanstack/query-core@5.62.8)(@types/react@18.3.2)(react@18.3.1)(typescript@5.5.4)(use-sync-external-store@1.4.0(react@18.3.1))(viem@2.21.55(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10))
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -12711,12 +12711,12 @@ snapshots:
       - react
       - use-sync-external-store
 
-  '@wagmi/core@2.16.3(@tanstack/query-core@5.62.8)(@types/react@18.3.2)(react@18.3.1)(typescript@5.5.4)(use-sync-external-store@1.2.0(react@18.3.1))(viem@2.21.55(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10))':
+  '@wagmi/core@2.16.3(@tanstack/query-core@5.62.8)(@types/react@18.3.2)(react@18.3.1)(typescript@5.5.4)(use-sync-external-store@1.4.0(react@18.3.1))(viem@2.21.55(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10))':
     dependencies:
       eventemitter3: 5.0.1
       mipd: 0.0.7(typescript@5.5.4)
       viem: 2.21.55(bufferutil@4.0.8)(typescript@5.5.4)(utf-8-validate@5.0.10)
-      zustand: 5.0.0(@types/react@18.3.2)(react@18.3.1)(use-sync-external-store@1.2.0(react@18.3.1))
+      zustand: 5.0.0(@types/react@18.3.2)(react@18.3.1)(use-sync-external-store@1.4.0(react@18.3.1))
     optionalDependencies:
       '@tanstack/query-core': 5.62.8
       typescript: 5.5.4
@@ -19686,6 +19686,12 @@ snapshots:
       '@types/react': 18.3.2
       react: 18.3.1
       use-sync-external-store: 1.2.0(react@18.3.1)
+
+  zustand@5.0.0(@types/react@18.3.2)(react@18.3.1)(use-sync-external-store@1.4.0(react@18.3.1)):
+    optionalDependencies:
+      '@types/react': 18.3.2
+      react: 18.3.1
+      use-sync-external-store: 1.4.0(react@18.3.1)
 
   zustand@5.0.0(@types/react@19.0.8)(react@18.3.1)(use-sync-external-store@1.2.0(react@18.3.1)):
     optionalDependencies:
