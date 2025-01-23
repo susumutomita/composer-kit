@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { mainnet } from "viem/chains";
 import { normalize } from "viem/ens";
-import { getPublicClient } from "../../core/internal/config/viem-public-client";
+import { getPublicClient } from "../../core/internal/config/web3-config";
 
 interface SocialProps {
   ensName: string;

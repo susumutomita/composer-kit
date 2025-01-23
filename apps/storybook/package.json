@@ -13,7 +13,9 @@
   "dependencies": {
     "@composer-kit/ui": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss-animate": "^1.0.7",
+    "viem": "^2.21.55"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

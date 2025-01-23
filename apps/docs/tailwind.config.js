@@ -3,7 +3,7 @@ export default {
   content: [
     "./docs/**/*.{html,js,ts,jsx,tsx,mdx}",
     "../../packages/composer-kit/**/*.{html,js,ts,jsx,tsx,mdx}",
-    "/Users/ankit/Desktop/celo/celo-composer/packages/composer-kit/**/*.{ts,tsx, jsx}",
+    "./examples/**/*.{html,js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
   safelist: ["dark"],
@@ -82,5 +82,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };

@@ -37,6 +37,14 @@ export default defineConfig({
           text: "Identity",
           link: "/components/identity",
         },
+        {
+          text: "TokenSelect",
+          link: "/components/token-select",
+        },
+        {
+          text: "Payment",
+          link: "/components/payment",
+        },
       ],
     },
   ],
