@@ -1,0 +1,53 @@
+import { Basic } from "../../../examples/address/basic";
+
+# Address
+
+## Usage
+
+The `Wallet` component provides functionality for connecting wallets and displaying user information.
+
+:::code-group
+
+<div data-title="Preview">
+  <Basic />
+</div>
+
+```tsx [app.tsx]
+import { Address } from "@composer-kit/ui/address";
+import { useState } from "react";
+
+export const Basic = () => {
+  const [isCopied, setIsCopied] = useState(false);
+  return (
+    <div>
+      <Address
+        address="0x208B03553D46A8A16ed53e8632743249dd2E79c3"
+        className="bg-white dark:bg-black p-1 rounded-md"
+        onCopyComplete={() => {
+          setIsCopied(true);
+          setTimeout(() => {
+            setIsCopied(false);
+          }, 1000);
+        }}
+      />
+      {isCopied && <p className="bg-white dark:bg-black">Copied</p>}
+    </div>
+  );
+};
+```
+
+:::
+
+## Props
+
+### `Address`
+
+| Prop             | Type                                   | Description                                                                                                                                                                       | Default     |
+| ---------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `isTruncated`    | `boolean` (optional)                   | Determines if the address should be truncated for display. Truncation typically hides the middle part of long addresses.                                                          | `false`     |
+| `className`      | `string` (optional)                    | A custom CSS class to apply styles to the component.                                                                                                                              | `-`         |
+| `address`        | `string`                               | The actual address to display. This is a required prop.                                                                                                                           | `-`         |
+| `copyOnClick`    | `boolean` (optional)                   | If `true`, the address will be copied to the clipboard when clicked.                                                                                                              | `false`     |
+| `onCopyComplete` | `(message: string) => void` (optional) | A callback that is triggered after the address is copied. It receives an address in case of success else `Failed to copy address` that can be used for feedback or notifications. | `undefined` |
+
+---
