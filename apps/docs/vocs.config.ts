@@ -22,12 +22,8 @@ export default defineConfig({
       collapsed: false,
       items: [
         {
-          text: "Wallet",
-          link: "/components/wallet",
-        },
-        {
-          text: "Swap",
-          link: "/components/swap",
+          text: "Address",
+          link: "/components/address",
         },
         {
           text: "Balance",
@@ -38,12 +34,20 @@ export default defineConfig({
           link: "/components/identity",
         },
         {
+          text: "Payment",
+          link: "/components/payment",
+        },
+        {
+          text: "Swap",
+          link: "/components/swap",
+        },
+        {
           text: "TokenSelect",
           link: "/components/token-select",
         },
         {
-          text: "Payment",
-          link: "/components/payment",
+          text: "Wallet",
+          link: "/components/wallet",
         },
       ],
     },
