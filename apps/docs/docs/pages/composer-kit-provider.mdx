@@ -1,8 +1,12 @@
 # ComposerKitProvider
 
+## Overview
+
+The `ComposerKitProvider` component is essential for integrating ComposerKit into your app. It ensures that all ComposerKit components work properly by wrapping your application with the necessary configurations.
+
 ## Usage
 
-The `ComposerKitProvider` component is essential for integrating ComposerKit components into your app. Wrap your application with this provider to ensure proper functionality.
+Wrap your application with `ComposerKitProvider` to enable ComposerKit components throughout your app.
 
 ```tsx
 import { ComposerKitProvider } from "@composer-kit/ui/core";
@@ -11,3 +15,22 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   return <ComposerKitProvider>{children}</ComposerKitProvider>;
 }
 ```
+
+## Props
+
+### `ComposerKitProvider`
+
+| Prop        | Type                     | Description                                                         |
+| ----------- | ------------------------ | ------------------------------------------------------------------- |
+| `chain`     | `Chain`                  | Specifies the blockchain network to connect to.                     |
+| `rpcUrl`    | `string`                 | The RPC endpoint used for blockchain interactions.                  |
+| `children`  | `React.ReactNode`        | The wrapped components inside the provider.                         |
+| `colorMode` | `"light" \| "dark"`      | Sets the theme mode (light or dark). Defaults to system preference. |
+| `config`    | `CreateConfigParameters` | Custom configuration settings for ComposerKit.                      |
+
+## Notes
+
+- If `chain` and `rpcUrl` are not provided, ComposerKit will use default settings.
+- The `colorMode` prop allows switching between dark and light themes easily.
+
+By using `ComposerKitProvider`, you ensure that all ComposerKit components work seamlessly within your application.
