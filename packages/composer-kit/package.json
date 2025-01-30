@@ -43,6 +43,11 @@
       "types": "./dist/payment/index.d.ts",
       "import": "./dist/payment/index.mjs",
       "require": "./dist/payment/index.js"
+    },
+    "./address": {
+      "types": "./dist/address/index.d.ts",
+      "import": "./dist/address/index.mjs",
+      "require": "./dist/address/index.js"
     }
   },
   "scripts": {
@@ -75,8 +80,6 @@
     "@radix-ui/react-dialog": "^1.1.5",
     "@radix-ui/react-popover": "^1.1.5",
     "@radix-ui/react-select": "^2.1.4",
-    "@uniswap/sdk-core": "^6.1.1",
-    "@uniswap/v3-sdk": "^3.19.0",
     "@wagmi/core": "^2.16.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
