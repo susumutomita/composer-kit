@@ -81,3 +81,43 @@ export default function App() {
 ```
 
 :::
+
+## Props
+
+### `Balance`
+
+| Prop       | Type              | Description                                                |
+| ---------- | ----------------- | ---------------------------------------------------------- |
+| `children` | `React.ReactNode` | The content to be rendered inside the `Balance` component. |
+
+---
+
+### `BalanceText`
+
+| Prop        | Type                                         | Description                                                                     |
+| ----------- | -------------------------------------------- | ------------------------------------------------------------------------------- |
+| `precision` | `number` _(optional)_                        | The number of decimal places to display in the balance. Defaults to `18`.       |
+| `...`       | `React.HTMLAttributes<HTMLParagraphElement>` | Any additional HTML attributes for the `p` tag, like `className`, `style`, etc. |
+
+---
+
+### `BalanceOptions`
+
+| Prop     | Type      | Description                                                   |
+| -------- | --------- | ------------------------------------------------------------- |
+| `tokens` | `Token[]` | An array of `Token` objects to display as selectable options. |
+
+---
+
+### `Token` Interface
+
+| Field      | Type      | Description                                 |
+| ---------- | --------- | ------------------------------------------- |
+| `name`     | `string`  | The name of the token.                      |
+| `symbol`   | `string`  | The symbol of the token.                    |
+| `address`  | `string`  | The contract address of the token.          |
+| `decimals` | `number`  | The number of decimal places for the token. |
+| `icon`     | `string?` | The icon for the token (optional).          |
+| `chainId`  | `number`  | `Chain`                                     |
+
+---

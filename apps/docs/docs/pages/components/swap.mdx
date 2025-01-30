@@ -28,7 +28,13 @@ The `Swap` component allows users to exchange tokens seamlessly.
 </div>
 
 ```tsx [app.tsx]
-import { Swap, SwapToggle, SwapToken, SwapHeader, SwapButton } from "@composer-kit/ui/swap";
+import {
+  Swap,
+  SwapToggle,
+  SwapToken,
+  SwapHeader,
+  SwapButton,
+} from "@composer-kit/ui/swap";
 
 export default function App() {
   const swapableTokens = [
@@ -58,6 +64,45 @@ export default function App() {
     </Swap>
   );
 }
+```
 
 :::
+
+## Props
+
+### `Swap`
+
+| Prop       | Type              | Description                                 |
+| ---------- | ----------------- | ------------------------------------------- |
+| children   | `React.ReactNode` | The child components of the Swap container. |
+| className? | `string`          | Optional additional class names.            |
+
+### `SwapToken`
+
+| Prop           | Type               | Description                                             |
+| -------------- | ------------------ | ------------------------------------------------------- |
+| swapableTokens | `SwapableTokens[]` | List of tokens available for swapping.                  |
+| label          | `string`           | Label for the SwapToken (e.g., "Sell", "Buy").          |
+| type           | `"from" \| "to"`   | Defines whether it's a "from" or "to" swap token field. |
+
+### `SwapButton`
+
+| Prop       | Type       | Description                                                  |
+| ---------- | ---------- | ------------------------------------------------------------ |
+| onSwap     | `function` | Callback function triggered when the swap button is clicked. |
+| className? | `string`   | Optional additional class names.                             |
+
+**onSwap Function Parameters:**
+
+```ts
+({
+  from: SwapableTokens | undefined,
+  to: SwapableTokens | undefined,
+  swapAmount: number,
+  balanceResponse: {
+    balance: string;
+    error: string;
+    response: UseReadContractReturnType;
+  }
+}) => void;
 ```

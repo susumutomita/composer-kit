@@ -20,7 +20,9 @@ function DefaultAvatar(): JSX.Element {
   );
 }
 
-export function Avatar(): JSX.Element {
+export function Avatar(
+  props: React.HTMLAttributes<HTMLImageElement>
+): JSX.Element {
   const { avatar, name: ensName } = useIdentity();
 
   return (
@@ -29,6 +31,7 @@ export function Avatar(): JSX.Element {
         <img
           alt={`${ensName}-avatar`}
           className="rounded-full h-10 w-10"
+          {...props}
           src={avatar}
         />
       ) : (

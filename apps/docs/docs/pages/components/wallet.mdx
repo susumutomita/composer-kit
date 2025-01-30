@@ -43,3 +43,30 @@ export default function App() {
   );
 }
 ```
+
+:::
+
+## Props
+
+### `Connect`
+
+| Prop        | Type                    | Description                                                                 |
+| ----------- | ----------------------- | --------------------------------------------------------------------------- |
+| `children`  | `React.ReactNode`       | The content inside the component, typically `Avatar` and `Name`.            |
+| `label`     | `React.ReactNode`       | The text or element to display on the connect button. Default is "Connect". |
+| `onConnect` | `() => void` (optional) | A callback function that is triggered when the connection is successful.    |
+
+### `Avatar`
+
+| Prop  | Type                                   | Description                                                               |
+| ----- | -------------------------------------- | ------------------------------------------------------------------------- |
+| `...` | `React.HTMLAttributes<HTMLDivElement>` | Inherits all standard `div` attributes (like `className`, `style`, etc.). |
+
+### `Name`
+
+| Prop          | Type                                    | Description                                                                                   |
+| ------------- | --------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `isTruncated` | `boolean` (optional)                    | Whether the name should be truncated (e.g., for display in small spaces). Default is `false`. |
+| `...`         | `React.HTMLAttributes<HTMLSpanElement>` | Inherits all standard `span` attributes (like `className`, `style`, etc.).                    |
+
+---

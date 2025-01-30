@@ -67,3 +67,36 @@ export default function App() {
 ```
 
 :::
+
+## Props
+
+### `Payment`
+
+| Prop               | Type                       | Description                                                    |
+| ------------------ | -------------------------- | -------------------------------------------------------------- |
+| `amount`           | `string`                   | The amount to be paid.                                         |
+| `tokenAddress`     | `Address`                  | The address of the token being used for the payment.           |
+| `recipientAddress` | `Address`                  | The address of the recipient receiving the payment.            |
+| `onSuccess`        | `(txHash: string) => void` | Callback function triggered upon successful payment. Optional. |
+| `onError`          | `(error: Error) => void`   | Callback function triggered when an error occurs. Optional.    |
+| `children`         | `React.ReactNode`          | The children nodes to render inside the provider.              |
+| `chain`            | `Chain`                    | The blockchain chain to use for the payment.                   |
+
+---
+
+### `PaymentDialog`
+
+| Prop           | Type                      | Description                                               |
+| -------------- | ------------------------- | --------------------------------------------------------- |
+| `open`         | `boolean`                 | Determines whether the dialog is open or not.             |
+| `onOpenChange` | `(open: boolean) => void` | Callback function triggered when the open state changes.  |
+| `children`     | `React.ReactNode`         | The children nodes to render inside the dialog. Optional. |
+
+---
+
+### `PaymentButton`
+
+| Prop        | Type              | Description                                      |
+| ----------- | ----------------- | ------------------------------------------------ |
+| `className` | `string`          | CSS class name for styling the button. Optional. |
+| `children`  | `React.ReactNode` | The children nodes inside the button. Optional.  |

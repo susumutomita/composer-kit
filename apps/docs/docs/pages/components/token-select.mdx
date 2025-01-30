@@ -83,3 +83,61 @@ export default function App() {
 ```
 
 :::
+
+## Props
+
+### `Token`
+
+| Prop       | Type     | Description                            |
+| ---------- | -------- | -------------------------------------- |
+| `address`  | `string` | The address of the token.              |
+| `chainId`  | `number` | The chain ID the token belongs to.     |
+| `decimals` | `number` | The number of decimals the token uses. |
+| `name`     | `string` | The name of the token.                 |
+| `symbol`   | `string` | The symbol of the token.               |
+
+---
+
+### `TokenSelect`
+
+| Prop           | Type                     | Description                                                           |
+| -------------- | ------------------------ | --------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`        | The children nodes to render inside the select.                       |
+| `defaultToken` | `Token`                  | The default token to be selected. Optional.                           |
+| `delayMs`      | `number`                 | Delay time in milliseconds before updating the select. Optional.      |
+| `onChange`     | `(token: Token) => void` | Callback function that is called when the token is changed. Optional. |
+
+---
+
+### `TokenSelectOption`
+
+| Prop        | Type                     | Description                                                        |
+| ----------- | ------------------------ | ------------------------------------------------------------------ |
+| `className` | `string`                 | CSS class name for styling the option. Optional.                   |
+| `children`  | `React.ReactNode`        | The children nodes for the option. Optional.                       |
+| `onSelect`  | `(token: Token) => void` | Callback function triggered when the option is selected. Optional. |
+| `token`     | `Token`                  | The token associated with the option.                              |
+
+---
+
+### `TokenSelectInput`
+
+`React.HTMLAttributes<HTMLInputElement>`
+
+### TokenSelectGroup
+
+| Prop           | Type              | Description                                                    |
+| -------------- | ----------------- | -------------------------------------------------------------- |
+| `children`     | `React.ReactNode` | The children nodes to render inside the group.                 |
+| `emptyMessage` | `string`          | The message to display when no tokens are available. Optional. |
+| `heading`      | `string`          | The heading to display for the group. Optional.                |
+
+---
+
+### `TokenSelectDropdown`
+
+| Prop          | Type              | Description                                              |
+| ------------- | ----------------- | -------------------------------------------------------- |
+| `children`    | `React.ReactNode` | The children nodes to render inside the dropdown.        |
+| `className`   | `string`          | CSS class name for styling the dropdown. Optional.       |
+| `placeholder` | `string`          | The placeholder text to show when the dropdown is empty. |

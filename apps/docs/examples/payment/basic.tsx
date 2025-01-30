@@ -23,7 +23,7 @@ export const PaymentBasic = () => {
         tokenAddress="0x765de816845861e75a25fca122bb6898b8b1282a"
       >
         <button
-          className="bg-black dark:bg-white text-white dark:text-black px-4 py-2 rounded"
+          className="bg-black font-medium dark:bg-white text-white dark:text-black px-4 py-2 rounded"
           onClick={() => {
             setIsOpen(!isOpen);
           }}

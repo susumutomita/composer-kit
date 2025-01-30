@@ -66,3 +66,42 @@ export default function App() {
 ```
 
 :::
+
+## Props
+
+### `Identity`
+
+| Prop      | Type                         | Description                                               |
+| --------- | ---------------------------- | --------------------------------------------------------- |
+| `address` | `Address`                    | The address of the identity.                              |
+| `token`   | `"CELO" \| "cUSD" \| "USDT"` | The type of token associated with the identity. Optional. |
+
+---
+
+### `Name`
+
+| Prop          | Type      | Description                                     |
+| ------------- | --------- | ----------------------------------------------- |
+| `isTruncated` | `boolean` | Whether the name should be truncated. Optional. |
+
+---
+
+### `Social`
+
+| Prop  | Type                                            | Description                           |
+| ----- | ----------------------------------------------- | ------------------------------------- |
+| `tag` | `"github" \| "twitter" \| "url" \| "farcaster"` | The social platform tag for the link. |
+
+---
+
+### `Balance`
+
+| Prop       | Type     | Description                                         |
+| ---------- | -------- | --------------------------------------------------- |
+| `precison` | `number` | The precision for displaying the balance. Optional. |
+
+---
+
+### `Avatar`
+
+`React.HTMLAttributes<HTMLImageElement>`
