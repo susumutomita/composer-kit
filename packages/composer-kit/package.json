@@ -48,6 +48,16 @@
       "types": "./dist/address/index.d.ts",
       "import": "./dist/address/index.mjs",
       "require": "./dist/address/index.js"
+    },
+    "./nft": {
+      "types": "./dist/nft/index.d.ts",
+      "import": "./dist/nft/index.mjs",
+      "require": "./dist/nft/index.js"
+    },
+    "./transaction": {
+      "types": "./dist/transaction/index.d.ts",
+      "import": "./dist/transaction/index.mjs",
+      "require": "./dist/transaction/index.js"
     }
   },
   "scripts": {

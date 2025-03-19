@@ -1,0 +1,139 @@
+import {
+  NFT,
+  NFTCard,
+  NFTImage,
+  NFTMeta,
+  NFTTokenId,
+} from "@composer-kit/ui/nft";
+
+# NFTCard
+
+## Overview
+
+The `NFTCard` component is designed to display NFT details, including its **metadata, image, and token ID**. It provides a structured layout for showcasing NFT assets.
+
+## Usage
+
+To use `NFTCard`, wrap it inside the `NFT` component and include `NFTMeta`, `NFTImage`, and `NFTTokenId` to display additional NFT details.
+
+:::code-group
+
+<div data-title="Preview">
+  <div className="flex items-center justify-center">
+    <NFT
+      contractAddress="0xd447209176470be0db276549c7143265a559Fb6b"
+      tokenId={BigInt("2334")}
+    >
+      <NFTCard>
+        <NFTMeta />
+        <NFTImage />
+        <NFTTokenId />
+      </NFTCard>
+    </NFT>
+  </div>
+</div>
+
+```tsx [app.tsx]
+import {
+  NFT,
+  NFTCard,
+  NFTImage,
+  NFTMeta,
+  NFTTokenId,
+} from "@composer-kit/ui/nft";
+
+export default function App() {
+  return (
+    <NFT
+      contractAddress="0xd447209176470be0db276549c7143265a559Fb6b"
+      tokenId={BigInt("2334")}
+    >
+      <NFTCard>
+        <NFTMeta />
+        <NFTImage />
+        <NFTTokenId />
+      </NFTCard>
+    </NFT>
+  );
+}
+```
+
+:::
+
+## Props
+
+### NFTCard
+
+```tsx
+interface NFTCardProps {
+  className?: string; // Custom CSS class for styling
+  style?: React.CSSProperties; // Inline styles
+  children?: React.ReactNode; // Additional elements inside the card
+}
+```
+
+| Prop      | Type                             | Description                                |
+| --------- | -------------------------------- | ------------------------------------------ |
+| className | `string` (optional)              | Custom CSS class for styling the NFT card. |
+| style     | `React.CSSProperties` (optional) | Inline styles for custom styling.          |
+| children  | `React.ReactNode` (optional)     | Additional elements inside the card.       |
+
+### NFTMeta
+
+```tsx
+interface NFTMetaProps {
+  className?: string; // CSS class name for styling
+}
+```
+
+| Prop      | Type                | Description                 |
+| --------- | ------------------- | --------------------------- |
+| className | `string` (optional) | CSS class name for styling. |
+
+### NFTImage
+
+```tsx
+interface NFTImageProps {
+  className?: string; // CSS class name for styling
+}
+```
+
+| Prop      | Type                | Description                 |
+| --------- | ------------------- | --------------------------- |
+| className | `string` (optional) | CSS class name for styling. |
+
+### NFTTokenId
+
+```tsx
+interface NFTTokenIdProps {
+  className?: string; // CSS class name for styling
+}
+```
+
+| Prop      | Type                | Description                 |
+| --------- | ------------------- | --------------------------- |
+| className | `string` (optional) | CSS class name for styling. |
+
+---
+
+## Example Use Case
+
+You can customize the **NFTCard** by adding extra UI elements, like buttons or additional text.
+
+```tsx
+<NFT
+  contractAddress="0xd447209176470be0db276549c7143265a559Fb6b"
+  tokenId={BigInt("2334")}
+>
+  <NFTCard>
+    <NFTMeta />
+    <NFTImage />
+    <NFTTokenId />
+  </NFTCard>
+</NFT>
+```
+
+---
+
+This documentation follows **Vocs Docs** format and is optimized for **Telegram** readability. 🚀
+Let me know if you need any tweaks! 🚀

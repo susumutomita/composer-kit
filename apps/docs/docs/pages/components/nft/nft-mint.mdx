@@ -1,0 +1,65 @@
+import {
+  NFT,
+  NFTCard,
+  NFTMeta,
+  NFTImage,
+  NFTTokenId,
+  NFTMint,
+} from "@composer-kit/ui/nft";
+
+# NFTMint
+
+The `NFTMint` component is a part of the Composer Kit UI library for NFTs. It renders a minting interface that lets users mint an NFT directly from your application. When placed within an `NFTCard`, it integrates seamlessly with other NFT components such as metadata, image, and token ID displays. The component derives its context from the parent `NFT` component, which supplies the required contract address and token ID.
+
+## Usage
+
+:::code-group
+
+<div data-title="Preview">
+  <div className="flex items-center justify-center">
+    <NFT
+      contractAddress="0xd447209176470be0db276549c7143265a559Fb6b"
+      tokenId={BigInt("2334")}
+    >
+      <NFTCard>
+        <div>
+          <NFTMeta />
+        </div>
+        <div className="flex flex-col gap-3 mb-6">
+          <NFTImage />
+          <NFTTokenId />
+        </div>
+        <NFTMint />
+      </NFTCard>
+    </NFT>
+  </div>
+</div>
+
+```tsx title="app.tsx"
+import {
+  NFT,
+  NFTCard,
+  NFTMeta,
+  NFTImage,
+  NFTTokenId,
+  NFTMint,
+} from "@composer-kit/ui/nft";
+
+export default function App() {
+  return (
+    <NFT
+      contractAddress="0xd447209176470be0db276549c7143265a559Fb6b"
+      tokenId={BigInt("2334")}
+    >
+      <NFTCard>
+        <NFTMeta />
+        <NFTImage />
+        <NFTTokenId />
+        <NFTMint />
+      </NFTCard>
+    </NFT>
+  );
+}
+```
+
+:::
