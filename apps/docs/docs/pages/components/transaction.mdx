@@ -1,0 +1,163 @@
+import { TransactionBasic } from "../../../examples/transaction/basic";
+
+# Transaction
+
+## Usage
+
+The `Transaction` component is designed to facilitate blockchain transactions with a simple interface, providing built-in status tracking and error handling.
+
+:::code-group
+
+<div data-title="Preview">
+  <div className="flex items-center justify-center">
+    <TransactionBasic />
+  </div>
+</div>
+
+```tsx [app.tsx]
+import {
+  Transaction,
+  TransactionButton,
+  TransactionStatus,
+} from "@composer-kit/ui/transaction";
+
+export default function App() {
+  return (
+    <div className="w-96 p-4 bg-white dark:bg-black rounded-lg shadow-lg">
+      <Transaction
+        chainId={42220}
+        onError={(error) => {
+          console.log("error", error);
+        }}
+        onSuccess={(result) => {
+          console.log("result", result);
+        }}
+        transaction={{
+          abi: [
+            {
+              name: "transfer",
+              type: "function",
+              stateMutability: "nonpayable",
+              inputs: [
+                { name: "recipient", type: "address" },
+                { name: "amount", type: "uint256" },
+              ],
+              outputs: [{ name: "", type: "bool" }],
+            },
+          ],
+          address: "0x765de816845861e75a25fca122bb6898b8b1282a",
+          args: ["0x717F8A0b80CbEDe59EcA195F1E3D8E142C84d4d6", 1],
+          functionName: "transfer",
+        }}
+      >
+        <TransactionButton>Send</TransactionButton>
+        <TransactionStatus />
+      </Transaction>
+    </div>
+  );
+}
+```
+
+:::
+
+### Anatomy
+
+The `TransactionBasic` component is built using the `@composer-kit/ui/transaction` package, which provides a simple way to execute blockchain transactions. Below is the breakdown of its structure:
+
+```tsx
+<Transaction>
+  <TransactionButton>Send</TransactionButton>
+  <TransactionStatus />
+</Transaction>
+```
+
+Each part of the `Transaction` component serves a specific role:
+
+- **`Transaction`**: The core wrapper that handles the blockchain transaction logic.
+  - Accepts `chainId`, `transaction` details (including ABI, contract address, function name, and arguments), and event handlers (`onSuccess` and `onError`).
+- **`TransactionButton`**: A button that triggers the transaction when clicked. It inherits the loading state while the transaction is pending.
+- **`TransactionStatus`**: Displays the current status of the transaction, such as pending, success, or failure.
+
+## Props
+
+### `Transaction`
+
+| Prop          | Type                    | Description                                                        |
+| ------------- | ----------------------- | ------------------------------------------------------------------ |
+| `chainId`     | `number`                | The ID of the blockchain network to use for the transaction.       |
+| `transaction` | `TransactionConfig`     | Configuration object for the transaction (see details below).      |
+| `onSuccess`   | `(result: any) => void` | Callback function triggered upon successful transaction. Optional. |
+| `onError`     | `(error: any) => void`  | Callback function triggered when an error occurs. Optional.        |
+| `children`    | `React.ReactNode`       | The children nodes to render inside the transaction component.     |
+
+### `TransactionConfig`
+
+| Prop           | Type     | Description                                                    |
+| -------------- | -------- | -------------------------------------------------------------- |
+| `abi`          | `Array`  | The ABI (Application Binary Interface) for the smart contract. |
+| `address`      | `string` | The address of the smart contract to interact with.            |
+| `args`         | `Array`  | Arguments to pass to the smart contract function.              |
+| `functionName` | `string` | The name of the function to call on the smart contract.        |
+
+---
+
+### `TransactionButton`
+
+| Prop        | Type              | Description                                      |
+| ----------- | ----------------- | ------------------------------------------------ |
+| `className` | `string`          | CSS class name for styling the button. Optional. |
+| `children`  | `React.ReactNode` | The children nodes inside the button. Optional.  |
+
+---
+
+### `TransactionStatus`
+
+| Prop        | Type     | Description                                              |
+| ----------- | -------- | -------------------------------------------------------- |
+| `className` | `string` | CSS class name for styling the status display. Optional. |
+
+## Example
+
+Here's an example of using the Transaction component to send tokens:
+
+```tsx
+import {
+  Transaction,
+  TransactionButton,
+  TransactionStatus,
+} from "@composer-kit/ui/transaction";
+
+function TokenTransfer() {
+  return (
+    <Transaction
+      chainId={42220} // Celo Mainnet
+      onSuccess={(result) => {
+        console.log("Transaction succeeded:", result);
+      }}
+      onError={(error) => {
+        console.error("Transaction failed:", error);
+      }}
+      transaction={{
+        abi: [
+          {
+            name: "transfer",
+            type: "function",
+            stateMutability: "nonpayable",
+            inputs: [
+              { name: "recipient", type: "address" },
+              { name: "amount", type: "uint256" },
+            ],
+            outputs: [{ name: "", type: "bool" }],
+          },
+        ],
+        address: "0x765de816845861e75a25fca122bb6898b8b1282a", // Token contract address
+        args: ["0x717F8A0b80CbEDe59EcA195F1E3D8E142C84d4d6", 1], // Recipient and amount
+        functionName: "transfer",
+      }}
+    >
+      <TransactionButton>Send Tokens</TransactionButton>
+      <TransactionStatus />
+    </Transaction>
+  );
+}
+```

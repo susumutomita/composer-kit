@@ -34,12 +34,30 @@ export default defineConfig({
           link: "/components/identity",
         },
         {
+          text: "nft",
+          collapsed: false,
+          items: [
+            {
+              text: "NFTCard",
+              link: "/components/nft/nft-card",
+            },
+            {
+              text: "NFTMint",
+              link: "/components/nft/nft-mint",
+            },
+          ],
+        },
+        {
           text: "Payment",
           link: "/components/payment",
         },
         {
           text: "Swap",
           link: "/components/swap",
+        },
+        {
+          text: "Transaction",
+          link: "/components/transaction",
         },
         {
           text: "TokenSelect",
