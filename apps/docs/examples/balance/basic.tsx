@@ -2,8 +2,8 @@ import {
   BalanceInput,
   BalanceOptions,
   BalanceText,
+  Balance,
 } from "@composer-kit/ui/balance";
-import { Balance } from "@composer-kit/ui/identity";
 import { swapableTokens } from "../../utils/constants";
 
 export const BalanceBasic = () => {
