@@ -15,6 +15,10 @@ export default defineConfig({
           text: "ComposerKitProvider",
           link: "/composer-kit-provider",
         },
+        {
+          text: "Theme",
+          link: "/theme",
+        },
       ],
     },
     {
