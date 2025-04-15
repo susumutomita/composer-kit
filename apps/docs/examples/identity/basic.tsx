@@ -1,5 +1,10 @@
-import { Balance, Identity, Social } from "@composer-kit/ui/identity";
-import { Avatar, Name } from "@composer-kit/ui/wallet";
+import {
+  Avatar,
+  Balance,
+  Identity,
+  Name,
+  Social,
+} from "@composer-kit/ui/identity";
 
 export const IdentityBasic = () => {
   return (
